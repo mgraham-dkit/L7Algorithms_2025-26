@@ -1,0 +1,5 @@
+Input: Array of numbers
+Output: None returned (array is updated)
+
+For each element in array:
+    Multiply current element by two and store in current position in array
