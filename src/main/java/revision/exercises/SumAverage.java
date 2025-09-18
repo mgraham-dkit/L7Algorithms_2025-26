@@ -14,6 +14,7 @@ public class SumAverage {
             num = input.nextInt();
             // sum = sum + num;
             sum += num;
+            count++;
         }
 
         System.out.println("Sum: " + sum);
