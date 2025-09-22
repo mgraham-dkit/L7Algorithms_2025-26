@@ -20,11 +20,21 @@ Returns the entered (and validated) number
         Scanner input = new Scanner(System.in);
         int num = 0;
 
-        System.out.println(prompt);
-        if(input.hasNextInt()){
-            num = input.nextInt();
+        boolean valid = false;
+        while(!valid) {
+            System.out.println(prompt);
+            if (input.hasNextInt()) {
+                num = input.nextInt();
+                valid = true;
+            }else{
+                System.out.println("Please enter an integer!");
+                input.nextLine();
+            }
         }
-
         return num;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getValidInteger("Please enter a number:"));
     }
 }
