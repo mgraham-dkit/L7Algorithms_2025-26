@@ -1,4 +1,4 @@
-package revision;
+package a_revision;
 
 public class WorkingWithArraysExamples {
     public static void main(String[] args) {

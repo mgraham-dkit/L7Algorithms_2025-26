@@ -1,4 +1,4 @@
-package revision.exercises;
+package a_revision.exercises;
 
 import java.util.Scanner;
 

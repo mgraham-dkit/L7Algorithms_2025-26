@@ -1,4 +1,4 @@
-package revision;
+package a_revision;
 
 import java.util.Scanner;
 
