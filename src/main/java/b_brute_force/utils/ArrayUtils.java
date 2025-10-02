@@ -1,6 +1,12 @@
 package b_brute_force.utils;
 
 public class ArrayUtils {
+    /**
+     * Returns the smallest integer found in the supplied array.
+     * @param nums The array of integers to be searched.
+     * @return The smallest integer found within the array.
+     * @throws IllegalArgumentException where the supplied array is null or empty
+     */
     public static int findMin(int [] nums){
         if(nums == null || nums.length == 0){
             throw new IllegalArgumentException("Cannot find minimum value in a null or empty array");
