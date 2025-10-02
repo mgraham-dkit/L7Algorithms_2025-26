@@ -1,0 +1,18 @@
+ACTION: resize
+INPUTS: Array to be resized
+OUTPUT: A new larger (?) array filled with the information from the original array
+
+
+// VALIDATION:
+if array is null:
+    throw new Illegal Argument Exception to halt process
+
+// SET UP:
+Create new array (temp) that is double the size of the original
+
+// LOGIC:
+for each slot in original array:
+    save the element in this slot to same slot in temp array
+
+// OUTPUT:
+return the temp array
