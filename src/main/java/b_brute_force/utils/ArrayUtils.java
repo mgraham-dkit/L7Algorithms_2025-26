@@ -28,4 +28,24 @@ public class ArrayUtils {
         // OUTPUT
         return currentMin;
     }
+
+    public int set(int [] data, int value, int index){
+        // VALIDATION
+        if(data == null){
+            throw new IllegalArgumentException("Array to be edited cannot be null");
+        }
+
+        if(index < 0 || index >= data.length){
+            throw new IllegalArgumentException("Index is outside the boundaries of the supplied array");
+        }
+
+        // SETUP
+        int original = data[index];
+
+        // LOGIC
+        data[index] = value;
+
+        // OUTPUT
+        return original;
+    }
 }
