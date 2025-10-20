@@ -36,7 +36,7 @@ public class ArrayUtils {
         }
 
         if(index < 0 || index >= data.length){
-            throw new IllegalArgumentException("Index is outside the boundaries of the supplied array");
+            throw new IndexOutOfBoundsException("Index is outside the boundaries of the supplied array");
         }
 
         // SETUP
