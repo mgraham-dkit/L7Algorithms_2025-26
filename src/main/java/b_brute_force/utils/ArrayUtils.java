@@ -71,4 +71,28 @@ public class ArrayUtils {
         // OUTPUT
         return original;
     }
+
+    public static int delete(int [] data, int index){
+        // VALIDATION
+        if(data == null){
+            throw new IllegalArgumentException("Array to be edited cannot be null");
+        }
+
+        if(index < 0 || index >= data.length){
+            throw new IndexOutOfBoundsException("Index is outside the boundaries of the supplied array");
+        }
+
+        // SETUP
+        int deleted = data[index];
+
+        // LOGIC
+        for (int i = index; i < data.length-1; i++) {
+            data[i] = data[i+1];
+        }
+
+        data[data.length-1] = 0;
+
+        // OUTPUT
+        return deleted;
+    }
 }
