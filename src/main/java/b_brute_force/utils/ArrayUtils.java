@@ -48,4 +48,27 @@ public class ArrayUtils {
         // OUTPUT
         return original;
     }
+
+    public int insert(int [] data, int value, int index){
+        // VALIDATION
+        if(data == null){
+            throw new IllegalArgumentException("Array to be edited cannot be null");
+        }
+
+        if(index < 0 || index >= data.length){
+            throw new IndexOutOfBoundsException("Index is outside the boundaries of the supplied array");
+        }
+
+        // SETUP
+        int original = data[data.length-1];
+
+        // LOGIC
+        for (int i = data.length-1; i > index; i--) {
+            data[i] = data[i-1];
+        }
+        data[index] = value;
+
+        // OUTPUT
+        return original;
+    }
 }
