@@ -1,0 +1,23 @@
+Action: Ordered merge of two arrays
+Inputs: first array to be merged (nums1), second array to be merged (nums2)
+Input requirements: Arrays must be sorted in ascending order
+Output: single merged array containing all elements from nums1 and all elements from nums2 in sorted order
+
+// VALIDATION:
+If nums1 is null or nums2 is null:
+    throw new Illegal Argument Exception
+
+// SET UP:
+Create a new array (merged) with size nums1.length + nums2.length
+Create variable (nums1Tracker) to track number of elements used in nums1
+Create variable (nums2Tracker) to track number of elements used in nums2
+
+// LOGIC:
+for each slot (i) in merged:
+    if current element in nums1 (nums1[nums1Tracker]) < current element in nums2 (nums2[nums2Tracker]):
+        Set merged[i] to current element in nums1
+    else:
+        Set merged[i] to current element in nums2
+
+// OUTPUT:
+return merged
