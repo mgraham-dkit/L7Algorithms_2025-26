@@ -1,0 +1,21 @@
+Action: Unordered merge of two arrays
+Inputs: first array to be merged (nums1), second array to be merged (nums2)
+Output: single merged array containing all elements from nums1 followed by all elements from nums2
+
+// VALIDATION:
+If nums1 is null or nums2 is null:
+    throw new Illegal Argument Exception
+
+// SET UP:
+Create a new array (merged) with size nums1.length + nums2.length
+
+// LOGIC:
+// Copy everything from first array to merged
+for each slot (i) in nums1:
+    Save nums1[i] in merged[i]
+
+for each slot (i) in nums2:
+    Save nums2[i] in merged[nums1.length+i]
+
+// OUTPUT:
+return merged array
