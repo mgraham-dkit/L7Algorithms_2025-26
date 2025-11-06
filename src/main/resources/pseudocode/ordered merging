@@ -14,10 +14,18 @@ Create variable (nums2Tracker) to track number of elements used in nums2
 
 // LOGIC:
 for each slot (i) in merged:
-    if current element in nums1 (nums1[nums1Tracker]) < current element in nums2 (nums2[nums2Tracker]):
+    if nums1Tracker equals nums1.length:
+        Set merged[i] to current element in nums2
+        Increase nums2Tracker by 1
+    else if nums2Tracker equals nums2.length:
         Set merged[i] to current element in nums1
+        Increase nums1Tracker by 1
+    else if current element in nums1 (nums1[nums1Tracker]) < current element in nums2 (nums2[nums2Tracker]):
+        Set merged[i] to current element in nums1
+        Increase nums1Tracker by 1
     else:
         Set merged[i] to current element in nums2
+        Increase nums2Tracker by 1
 
 // OUTPUT:
 return merged
