@@ -1,0 +1,27 @@
+action: Convert content of supplied array to a String (string will represent all data in the array)
+Input: An array of elements (data)
+Output: A String representing all elements in the array in a formatted manner
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    Throw new Illegal Argument Exception
+
+// VALIDATE FOR GOOD DATA
+if data is empty:
+    return message indicating array is empty
+
+// SETUP:
+Create StringBuilder (builder) and initialise with "["
+
+// LOGIC:
+for each element (elem) in data up to second last element:
+    Append elem to builder
+    Append "," to builder
+
+Append final element in data to builder
+Append "]" to builder
+Convert builder content to String (finalResult)
+
+// OUTPUT:
+return finalResult
