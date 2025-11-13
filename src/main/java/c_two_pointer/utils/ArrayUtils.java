@@ -36,6 +36,44 @@ public class ArrayUtils {
 
         return sb.toString();
     }
+    public static int [] merge(int [] nums1, int[] nums2){
+        /*
+            // VALIDATION:
+            If nums1 is null or nums2 is null:
+                throw new Illegal Argument Exception
+        */
+        if(nums1 == null || nums2 == null){
+            throw new IllegalArgumentException("Cannot merge a null array");
+        }
+        /*
+            // SET UP:
+            Create a new array (merged) with size nums1.length + nums2.length
+        */
+        int [] merged = new int[nums1.length + nums2.length];
+
+        /*
+            // LOGIC:
+            // Copy everything from first array to merged
+            for each slot (i) in nums1:
+                Save nums1[i] in merged[i]
+        */
+        for (int i = 0; i < nums1.length; i++) {
+            merged[i] = nums1[i];
+        }
+        /*
+            for each slot (i) in nums2:
+                Save nums2[i] in merged[nums1.length+i]
+        */
+        for (int i = 0; i < nums2.length; i++) {
+            merged[nums1.length+i] = nums2[i];
+        }
+
+        /*
+            // OUTPUT:
+            return merged array
+         */
+        return merged;
+    }
 
     public static int [] orderedMerge(int [] nums1, int [] nums2){
         /*
