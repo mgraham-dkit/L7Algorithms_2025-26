@@ -132,4 +132,38 @@ public class ArrayUtils {
          */
         return merged;
     }
+
+    public int [] partition(int [] data, int pivot){
+        if(data == null){
+            throw new IllegalArgumentException("Array to be partitioned cannot be null");
+        }
+
+        int leftCount = 0;
+        int rightCount = 0;
+        for(int value: data){
+            if(value <= pivot){
+                leftCount++;
+            }else{
+                rightCount++;
+            }
+        }
+
+        int [] left = new int[leftCount];
+        int leftTracker = 0;
+        int [] right = new int[rightCount];
+        int rightTracker = 0;
+
+        for(int value: data){
+            if(value <= pivot){
+                left[leftTracker] = value;
+                leftTracker++;
+            }else{
+                right[rightTracker] = value;
+                rightTracker++;
+            }
+        }
+
+        int [] partitioned = merge(left, right);
+        return partitioned;
+    }
 }
