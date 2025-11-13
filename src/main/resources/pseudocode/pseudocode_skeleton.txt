@@ -1,0 +1,13 @@
+Action:
+Input:
+Output:
+
+// VALIDATION:
+    // VALIDATE FOR REAL DATA
+    // VALIDATE FOR GOOD DATA
+
+// SETUP:
+
+// LOGIC:
+
+// OUTPUT:
