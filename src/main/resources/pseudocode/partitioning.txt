@@ -1,0 +1,40 @@
+Action: Partition an array - group all data less than or equal to pivot value on left,
+    all other elements (greater than pivot) appear on right
+Input: An array of elements (data) and a pivot value (pivot)
+Output: A new independent array of elements, with all elements less than or equal to pivot on left,
+        and all other elements (greater than pivot) appear on right
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data array is null:
+    throw an Illegal Argument Exception - Cannot partition a null array
+
+if pivot is null:
+    throw an Illegal Argument Exception - Cannot partition based on a null pivot
+
+// SETUP:
+Create variable (count) to track number of elements to place on left side of final array
+for each element (elem) in data:
+    if elem <= pivot:
+        increase count by 1
+
+Create new array (left) with size equal to count
+Create variable (leftTrack) to track position within left array
+
+Create new array (right) with size equal to data length - count
+Create variable (rightTrack) to track position within right array
+
+// LOGIC:
+for each element (elem) in data:
+    if elem <= pivot:
+        Set left[leftTrack] to elem
+        Increase leftTrack by 1
+    else:
+        Set right[rightTrack] to elem
+        Increase rightTrack by 1
+
+Unordered merge left and right arrays (using unorderedMerge action defined in merging.txt) and store in new array
+(merged)
+
+// OUTPUT:
+Return merged
