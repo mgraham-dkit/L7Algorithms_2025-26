@@ -1,6 +1,33 @@
 package b_brute_force.utils;
 
 public class ArrayUtils {
+    public static int search(int [] data, int target){
+        if(data == null){
+            throw new IllegalArgumentException("Cannot search a null array");
+        }
+
+        for (int i = 0; i < data.length; i++) {
+            if(data[i] == target){
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public static int lastIndexOf(int [] data, int target){
+        if(data == null){
+            throw new IllegalArgumentException("Cannot search a null array");
+        }
+
+        for (int i = data.length-1; i >= 0; i--) {
+            if(data[i] == target){
+                return i;
+            }
+        }
+
+        return -1;
+    }
     /**
      * Returns the smallest integer found in the supplied array.
      * @param nums The array of integers to be searched.

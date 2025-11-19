@@ -1,0 +1,18 @@
+Action: Get the last position at which a supplied element appears in an array
+Input: An array of elements (data) to be searched, a value (target) to find
+Output: The last position at which target appears in data, or -1 if it does not appear
+Implementation: b_brute_force/ArrayUtils.lastIndexOf()
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    throw new Illegal Argument Exception (can't search a null array)
+
+// LOGIC:
+for each position (i) in data, starting at last position and decreasing to 0 position :
+    if data[i] equals target:
+        // OUTPUT scenario a)
+        return i
+
+// OUTPUT scenario b):
+return -1

@@ -1,0 +1,25 @@
+Action: Delete an element from a specified position in a supplied array using shift deleting
+Input: An array of elements (data) to be deleted from, an integer (index) - the position from which to delete
+Output: The element deleted from the array
+Implementation: b_brute_force/ArrayUtils.delete()
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    throw new Illegal Argument Exception (can't delete from a null array)
+
+// VALIDATE FOR GOOD DATA
+if index is less than 0 or greater than or equal to the length of data:
+    throw new Index Out Of Bounds Exception (supplied index is outside the boundaries of the array)
+
+// SETUP:
+Create variable (deleted) and set to data[index]
+
+// LOGIC:
+for each position (i) in data, beginning at index and up to data length  - 1:
+    Set data[i] to data[i+1]
+
+Set last position in data to blank
+
+// OUTPUT:
+Return deleted
