@@ -166,4 +166,73 @@ public class ArrayUtils {
         int [] partitioned = merge(left, right);
         return partitioned;
     }
+
+    public String [] deduplicate(String [] data){
+        /*
+            // VALIDATION
+            if data is null:
+                throw Illegal Argument Exception (cannot deduplicate a null array)
+       */
+        if(data == null){
+            throw new IllegalArgumentException("Cannot deduplicate a null array");
+        }
+
+        if(data.length == 0){
+            return new String [0];
+        }
+
+        /*
+            // SETUP
+            Create a new array (filtered) with size equal to data
+            Create a variable (uniqueCount) to track number of elements added to filtered
+        */
+
+        String [] filtered = new String[data.length];
+        int uniqueCount = 0;
+
+        filtered[0] = data[0];
+        uniqueCount++;
+
+        /*
+            // LOGIC
+            for each element (elem) in data:
+                Create boolean flag (found) to track if element exists in filtered and set to false
+                for each slot (j) in filtered up to uniqueCount:
+                    if elem equals value in filtered[j]:
+                        Set found to true
+                        Halt loop/break out of loop
+
+                if found is false:
+                    Set filtered[uniqueCount] to elem
+                    Increase uniqueCount by 1
+        */
+
+        for (int i = 1; i < data.length; i++) {
+            String currentElem = data[i];
+            boolean found = false;
+            for (int j = 0; j < uniqueCount; j++) {
+                if(currentElem.equals(filtered[j])){
+                    found = true;
+                    break;
+                }
+            }
+            if(!found){
+                filtered[uniqueCount] = currentElem;
+                uniqueCount++;
+            }
+            
+        }
+        /*
+            resize filtered array to uniqueCount size and store in new array (resized)
+        */
+        String [] resized = new String[uniqueCount];
+        for (int i = 0; i < resized.length; i++) {
+            resized[i] = filtered[i];
+        }
+        /*
+            // OUTPUT
+            return resized
+         */
+        return resized;
+    }
 }
