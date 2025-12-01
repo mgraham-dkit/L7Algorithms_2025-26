@@ -236,6 +236,54 @@ public class ArrayUtils {
         return resized;
     }
 
+    public static int [] orderedDeduplicate(int [] data){
+        // VALIDATION: Handle not real data
+        if(data == null){
+            throw new IllegalArgumentException("Cannot deduplicate a null array");
+        }
+
+        // Handle unsuitable data
+        // If the array is empty, avoid any extra unnecessary processing
+        if(data.length == 0){
+            return new int[0];
+        }
+
+        // SETUP : Create an array to hold one copy of each value, plus a tracker to know where we are in it
+        int [] filtered = new int[data.length];
+        int uniqueCount = 0;
+
+        // LOGIC
+        // Add first element in automatically
+        filtered[0] = data[0];
+        uniqueCount++;
+
+        // Loop through and add each of the rest in
+        for(int i = 1; i < data.length; i++){
+            // If the current element doesn't match the last thing we saved
+            if(data[i] != filtered[uniqueCount-1]){
+                // Save first instance of new value to filtered array
+                filtered[uniqueCount] = data[i];
+                // Increase number of values encountered
+                uniqueCount++;
+            }
+        }
+
+        // Filtered now contains only one copy of each value
+        // If array is full, return it
+        if(filtered.length == uniqueCount){
+            return filtered;
+        }
+
+        // If array has empty slots, make a smaller one
+        int [] resized = new int[uniqueCount];
+        // Copy each value from the filtered array to the smaller array
+        for (int i = 0; i < resized.length; i++) {
+            resized[i] = filtered[i];
+        }
+        // Return the smaller array
+        return resized;
+    }
+
     public static int binarySearch(int [] data, int target){
         if(data == null){
             throw new IllegalArgumentException("Cannot search a null array");
