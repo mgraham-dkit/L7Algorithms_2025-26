@@ -1,0 +1,17 @@
+Action: Sort a supplied array in ascending order using bubble sort algorithm
+Input: Array to be sorted (data)
+Output: Original array with data reordered to ascending order
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+If data is null:
+    Throw new Illegal Argument Exception (Cannot sort a null array)
+
+// LOGIC:
+for each slot (count) in data up to data.length - 1:
+    for each position (i) in data from 0 to data.length - 1 - count:
+        If data[i] is greater than data[i+1]:
+            Create variable (temp) and set to data[i]
+            Set data[i] to data[i+1]
+            Set data[i+1] to temp
+
