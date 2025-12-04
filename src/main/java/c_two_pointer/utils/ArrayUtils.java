@@ -320,4 +320,27 @@ public class ArrayUtils {
             }
         }
     }
+
+    public static void optimisedBubbleSort(int [] data){
+        if(data == null){
+            throw new IllegalArgumentException("Cannot search a null array");
+        }
+
+
+        for (int passCount = 0; passCount < data.length-1; passCount++) {
+            // SETUP
+            boolean swapped = false;
+            for (int j = 0; j < data.length - 1 - passCount; j++) {
+                if(data[j] > data[j+1]){
+                    int temp = data[j];
+                    data[j] = data[j+1];
+                    data[j+1] = temp;
+                    swapped =true;
+                }
+            }
+            if(!swapped){
+                break;
+            }
+        }
+    }
 }
