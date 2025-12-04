@@ -13,6 +13,15 @@ public class SearchSortTestBed {
         System.out.println(data[data.length-1] + "]");
     }
 
+    public static void displayArray(String [] data){
+        System.out.print("[");
+        for (int i = 0; i < data.length-1; i++) {
+            System.out.print(data[i] + ", ");
+        }
+        System.out.println(data[data.length-1] + "]");
+    }
+
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int [] data = {12, 34, 1, 4, 1234, -10, 38, 81, 2, 54, 23};
@@ -33,5 +42,10 @@ public class SearchSortTestBed {
         }else{
             System.out.println(target + " was found in the array at index " + index);
         }
+
+        String [] names = {"Alison", "Melinda", "Abed", "Annie", "Chester"};
+        displayArray(names);
+        ArrayUtils.selectionSort(names);
+        displayArray(names);
     }
 }
