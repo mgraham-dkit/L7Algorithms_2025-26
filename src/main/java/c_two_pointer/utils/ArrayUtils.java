@@ -343,4 +343,23 @@ public class ArrayUtils {
             }
         }
     }
+
+    public static void selectionSort(String [] data){
+        if(data == null){
+            throw new IllegalArgumentException("Cannot sort a null array");
+        }
+
+        for(int startPos = 0; startPos < data.length - 1; startPos++){
+            int minPos = startPos;
+            for(int j = startPos + 1; j < data.length; j++){
+                if(data[minPos].compareTo(data[j]) > 0){
+                    minPos = j;
+                }
+            }
+
+            String temp = data[startPos];
+            data[startPos] = data[minPos];
+            data[minPos] = temp;
+        }
+    }
 }
