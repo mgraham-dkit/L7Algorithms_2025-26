@@ -1,0 +1,20 @@
+Action: Sort a supplied array in ascending order
+Input: Array of data to be sorted (data)
+Output: Nothing returned (supplied array is updated)
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    Throw new Illegal Argument Exception (Cannot sort a null array)
+
+// LOGIC:
+for each position (startPos) from 0 to end of array - 1:
+    set minPos to startPos
+    for each position (j) from startPos+1 to end of array:
+        if data[j] < data[minPos]:
+            Set minPos to j
+
+    // Swap data[minPos] with data[startPos]
+    Create temp variable and set to data[minPos]
+    Set data[minPos] to data[startPos]
+    Set data[startPos] to temp
