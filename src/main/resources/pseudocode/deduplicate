@@ -6,12 +6,18 @@ Output: A new (independent) array of data containing only one copy of each value
 if data is null:
     throw Illegal Argument Exception (cannot deduplicate a null array)
 
+if data array is empty:
+    return new empty array
+
 // SETUP
 Create a new array (filtered) with size equal to data
 Create a variable (uniqueCount) to track number of elements added to filtered
 
 // LOGIC
-for each element (elem) in data:
+Set filtered[0] to data[0]
+Increment uniqueCount by 1
+
+for each element (elem) in data starting at slot 1:
     Create boolean flag (found) to track if element exists in filtered and set to false
     for each slot (j) in filtered up to uniqueCount:
         if elem equals value in filtered[j]:
@@ -21,6 +27,9 @@ for each element (elem) in data:
     if found is false:
         Set filtered[uniqueCount] to elem
         Increase uniqueCount by 1
+
+if uniqueCount is equal to length of filtered array:
+    return filtered array
 
 resize filtered array to uniqueCount size and store in new array (resized)
 
