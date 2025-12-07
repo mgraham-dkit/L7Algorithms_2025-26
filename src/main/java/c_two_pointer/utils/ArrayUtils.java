@@ -195,7 +195,7 @@ public class ArrayUtils {
 
         /*
             // LOGIC
-            for each element (elem) in data:
+            for each element (elem) in data starting at slot 1:
                 Create boolean flag (found) to track if element exists in filtered and set to false
                 for each slot (j) in filtered up to uniqueCount:
                     if elem equals value in filtered[j]:
@@ -222,6 +222,11 @@ public class ArrayUtils {
             }
             
         }
+
+        if(uniqueCount == data.length){
+            return filtered;
+        }
+
         /*
             resize filtered array to uniqueCount size and store in new array (resized)
         */
