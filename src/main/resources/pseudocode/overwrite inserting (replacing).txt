@@ -1,0 +1,72 @@
+// REPLACE VALUE AT SPECIFIED INDEX WITH SUPPLIED VALUE
+Action: Replace a value in an int array at a specified position with a new value
+Input: An array of integers (data) - the array to replace within;
+        A single integer (index) - the position at which to replace;
+        A single integer (newValue) - the new value to be inserted into the array
+Output: A single integer - the value that was deleted/replaced
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    Throw new illegal argument exception - cannot replace within a null array
+// VALIDATE FOR GOOD DATA
+if index is less than 0 OR index is greater than or equal to the length of the array:
+    Throw new index out of bounds exception - supplied position is outside boundaries of the supplied array
+
+// SETUP:
+Create variable (replaced) and set to data[index]
+
+// LOGIC:
+Set data[index] to newValue
+
+// OUTPUT:
+Return replaced
+
+// REPLACE FIRST INSTANCE OF SPECIFIED VALUE
+Action: Replace the first instance of a specified value in an int array with a new supplied value
+Input: An array of integers (data) - the array to replace within;
+        A single integer (oldValue) - the value to replace;
+        A single integer (newValue) - the new value to be inserted into the array
+Output: A boolean - true if the oldValue could be replaced, false otherwise
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    Throw new illegal argument exception - cannot replace within a null array
+
+// SETUP:
+Create boolean variable (replaced) and set to false
+
+// LOGIC:
+for each position (i) in data:
+    if data[i] equals oldValue:
+        Set data[i] to newValue
+        Set replaced to true
+        Break out of loop
+
+// OUTPUT:
+Return replaced
+
+// REPLACE ALL INSTANCES OF SPECIFIED VALUE
+Action: Replace all instances of a specified value in an int array with a new supplied value
+Input: An array of integers (data) - the array to replace within;
+        A single integer (oldValue) - the value to replace;
+        A single integer (newValue) - the new value to be inserted into the array
+Output: A single integer (replacedCount) - the number of copies in from the array
+
+// VALIDATION:
+// VALIDATE FOR REAL DATA
+if data is null:
+    Throw new illegal argument exception - cannot replace within a null array
+
+// SETUP:
+Create an integer variable (replacedCount) and set to 0
+
+// LOGIC:
+for each position (i) in data:
+    if data[i] equals oldValue:
+        Set data[i] to newValue
+        Increase replacedCount by 1
+
+// OUTPUT:
+Return replaced
