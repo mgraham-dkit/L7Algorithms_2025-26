@@ -161,4 +161,81 @@ public class ArrayUtils {
          */
         return merged;
     }
+
+    public static int wipeAtIndex(int [] data, int index){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // GOOD DATA CHECK
+        if(index < 0 || index >= data.length){
+            throw new IndexOutOfBoundsException("Supplied position is outside boundaries of the supplied array");
+        }
+
+        // SETUP:
+        int overwritten = data[index];
+
+        // LOGIC:
+        data[index] = 0;
+
+        // OUTPUT:
+        return overwritten;
+    }
+
+    public static boolean wipe(int [] data, int value){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // SETUP:
+        boolean overwritten = false;
+
+        // LOGIC:
+        // for each position (i) in data:
+        for (int i = 0; i < data.length; i++) {
+            // if data[i] equals value:
+            if(data[i] == value){
+                // Set data[i] to 0 (overwrite it with a blank)
+                data[i] = 0;
+                // Set overwritten to true
+                overwritten = true;
+                // break out of loop
+                break;
+            }
+        }
+
+        // OUTPUT:
+        return overwritten;
+    }
+
+    public static int wipeAll(int [] data, int value){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // SETUP:
+        int overwrittenCount = 0;
+
+        // LOGIC:
+        // for each position (i) in data:
+        for (int i = 0; i < data.length; i++) {
+            // if data[i] equals value:
+            if(data[i] == value){
+                // Set data[i] to 0 (overwrite it with a blank)
+                data[i] = 0;
+                // Increase counter of how many have been overwritten
+                overwrittenCount++;
+            }
+        }
+
+        // OUTPUT:
+        return overwrittenCount;
+    }
+
 }
