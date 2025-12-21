@@ -238,4 +238,110 @@ public class ArrayUtils {
         return overwrittenCount;
     }
 
+    public static int replaceAtIndex(int [] data, int index, int newValue){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // GOOD DATA CHECK
+        if(index < 0 || index >= data.length){
+            throw new IndexOutOfBoundsException("Supplied position is outside boundaries of the supplied array");
+        }
+
+        // SETUP:
+        int replaced = data[index];
+
+        // LOGIC:
+        data[index] = newValue;
+
+        // OUTPUT:
+        return replaced;
+    }
+
+    public static boolean replace(int [] data, int oldValue, int newValue){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // SETUP:
+        boolean replaced = false;
+
+        // LOGIC:
+        // for each position (i) in data:
+        for (int i = 0; i < data.length; i++) {
+            // if data[i] equals value:
+            if(data[i] == oldValue){
+                // Set data[i] to new (replace it with the new value to be inserted)
+                data[i] = newValue;
+                // Set replaced to true
+                replaced = true;
+                // break out of loop
+                break;
+            }
+        }
+
+        // OUTPUT:
+        return replaced;
+    }
+
+    public static int replaceAll(int [] data, int oldValue, int newValue){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // SETUP:
+        int replacedCount = 0;
+
+        // LOGIC:
+        // for each position (i) in data:
+        for (int i = 0; i < data.length; i++) {
+            // if data[i] equals value:
+            if(data[i] == oldValue){
+                // Set data[i] to new (replace it with the new value to be inserted)
+                data[i] = newValue;
+                // Set replaced to true
+                replacedCount++;
+            }
+        }
+
+        // OUTPUT:
+        return replacedCount;
+    }
+
+    public static int replaceAll(String [] data, String oldValue, String newValue){
+        // VALIDATION
+        // REAL DATA CHECK
+        if(data == null){
+            throw new IllegalArgumentException("Cannot delete from a null array");
+        }
+
+        // GOOD DATA CHECK
+        if(oldValue == null || newValue == null){
+            throw new IllegalArgumentException("Cannot carry out replacement using null objects");
+        }
+
+        // SETUP:
+        int replacedCount = 0;
+
+        // LOGIC:
+        // for each position (i) in data:
+        for (int i = 0; i < data.length; i++) {
+            // if data[i] equals value:
+            if(data[i].equals(oldValue)){
+                // Set data[i] to new (replace it with the new value to be inserted)
+                data[i] = newValue;
+                // Set replaced to true
+                replacedCount++;
+            }
+        }
+
+        // OUTPUT:
+        return replacedCount;
+    }
 }
